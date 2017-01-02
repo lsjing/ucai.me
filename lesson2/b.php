@@ -16,11 +16,11 @@
 <body>
 <div class="container">
     <div class="row line">
-        <div class="col-md-3 box">
+        <div class="col-xs-12 col-sm-6  col-md-4 box">
             <div class="form">
-                <form method="post" encrypt="multipart/form-data">
+                <form method="POST" action="/lesson2/b.php" enctype="multipart/form-data">
                     <label for="email">邮&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
-                    <input type="text" name="email" id="email" required><br/>
+                    <input type="email" name="email" id="email" required><br/>
 
                     <label for="username">用户名</label>
                     <input type="text" name="username" id="username" required><br/>
@@ -44,12 +44,12 @@
                     <input type="file" name="file" id="file" required><br/>
 
 
-                    <input type="submit" value="col-md-3 box1">
+                    <input type="submit" value="submit box1">
                 </form>
             </div>
         </div>
 
-        <div class="col-md-3 box">
+        <div class="col-xs-12 col-sm-6  col-md-4 box">
             <div class="form">
                 <form >
                     <label for="email">邮&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
@@ -58,22 +58,22 @@
                     <label for="username">用户名</label>
                     <input type="text" name="username" id="username"><br/>
 
-                    <input type="submit" value="col-md-3 box2">
+                    <input type="submit" value="submit box2">
                 </form>
             </div>
         </div>
 
-        <div class="col-md-3 box">
+        <div class="col-xs-12 col-sm-6  col-md-4 box">
             <div class="form">
                 <form >
                     <label for="email">邮&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
                     <input type="text" name="email" id="email" /><br/>
-                    <input type="submit" value="col-md-3 box3">
+                    <input type="submit" value="submit box3">
                 </form>
             </div>
         </div>
 
-        <div class="col-md-3 box">
+        <div class="col-xs-12 col-sm-6  col-md-4 box">
             <div class="form">
                 <form >
                     <label for="email">邮&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
@@ -88,68 +88,34 @@
                     <label for="date">日&nbsp;&nbsp;&nbsp;&nbsp;期</label>
                     <input type="datetime" name="datetime" id="datetime"><br/>
 
-                    <input type="submit" value="col-md-3 box4">
+                    <input type="submit" value="submit box4">
                 </form>
             </div>
         </div>
     </div>
 
  
-    <div class="row line">
-        <div class="col-md-3 box">
-            <div class="form">
-                <form >
-                    <label for="email">邮&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
-                    <input type="text" name="email" id="email" /><br/>
-                    <input type="submit" value="col-md-3 box5">
-                </form>
-            </div>
-        </div>
-
-        <div class="col-md-3 box">
-            <div class="form">
-                <form >
-                    <label for="email">邮&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
-                    <input type="text" name="email" id="email" /><br/>
-                    <input type="submit" value="col-md-3 box6">
-                </form>
-            </div>
-        </div>
-
-        <div class="col-md-6 box">
-            <div class="form">
-                <form >
-                    <label for="email">邮&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
-                    <input type="text" name="email" id="email" /><br/>
-                    <input type="submit" value="col-md-6 box7">
-                </form>
-            </div>
-        </div>
-    </div>    
-
+    
 
     <div class="row line">
-        <div class="col-md-2 box">
-            <div class="form">
-                <form >
-                    <label for="email">邮&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
-                    <input type="text" name="email" id="email" /><br/>
-                    <input type="submit" value="col-md-2 box8">
-                </form>
+        <div class="col-sm-6">
+            <div>
+                <pre>
+                <?php
+
+                    $uploadDir = dirname(__FILE__) . '/upload/';
+
+                    if(!empty($_POST))    
+                        print_r($_POST);
+                    
+                    if(!empty($_FILES))
+                        print_r($_FILES) && move_uploaded_file($_FILES['file']['tmp_name'], $uploadDir.'/'.rand(100,999).$_FILES['file']['name']);
+
+                ?>
+                </pre>
             </div>
         </div>
-
-
-        <div class="col-md-8 box">
-            <div class="form">
-                <form >
-                    <label for="email">邮&nbsp;&nbsp;&nbsp;&nbsp;箱</label>
-                    <input type="text" name="email" id="email" /><br/>
-                    <input type="submit" value="col-md-8 box9">
-                </form>
-            </div>
-        </div>
-    </div>  
+    </div>
 
 </div>
 </body>
